@@ -1,255 +1,87 @@
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Portfolio</title>
+    <link rel="stylesheet" href="CSS/styles-main.css">
+        <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+</head>
+<body>
+    <!-- Loading screen -->
+    <div class="loading-overlay">
+        <div class="spinner"></div>
+    </div>
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<!--     <div class="floating-shapes">
+    <div class="shape" style="width: 80px; height: 80px; left: 10%; top: 10%;"></div>
+    <div class="shape" style="width: 60px; height: 60px; right: 20%; top: 20%;"></div>
+    <div class="shape" style="width: 100px; height: 100px; left: 30%; bottom: 30%;"></div>
+    <div class="shape" style="width: 50px; height: 50px; right: 10%; bottom: 10%;"></div>
+</div> -->
 
-        body {
-            font-family: 'Poppins', sans-serif;
-            /* background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); */
-            color: #e0e0e0;
-            line-height: 1.6;
-            overflow: hidden; /* Disable scrolling during loading */
-            background-color: #0a0a1e;
-        }
+    <header class="header">
+<div class="title">
+ <h1>Revy Network</h1>
+ </div>
+</div>
+    </header>
 
-        /* Loading overlay */
-        .loading-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(7px);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 10000;
-        }
+    <div class="container">
+        <section class="section" id="about">
+            <h2>About Me</h2>
+            <p>I'm a passionate web developer with a keen eye for design and a love for creating seamless user experiences. With over 5 years of experience, I specialize in front-end technologies, including HTML, CSS, JavaScript, and frameworks like React.</p>
+            <p>I have worked on various projects, ranging from dynamic websites, e-commerce platforms, and mobile apps to back-end solutions with Node.js and Python. My journey in web development has allowed me to create intuitive user interfaces that blend design and functionality.</p>
+            <p>Beyond technical skills, I enjoy collaborating with teams, solving complex problems, and continuously learning new technologies. In my free time, I love experimenting with UI/UX trends and contributing to open-source projects.</p>
+        </section>
 
-        .loading-overlay .spinner {
-            border: 8px solid grey;
-            border-radius: 50%;
-            border-top: 8px solid white;
-            width: 60px;
-            height: 60px;
-            animation: spin 2s linear infinite;
-        }
+        <section class="section" id="skills">
+            <h2>Skills</h2>
+            <div class="skills">
+                <span class="skill">HTML5</span>
+                <span class="skill">CSS3</span>
+                <span class="skill">JavaScript</span>
+                <span class="skill">React</span>
+                <span class="skill">Node.js</span>
+                <span class="skill">Python</span>
+                <span class="skill">UI/UX Design</span>
+                <span class="skill">Responsive Design</span>
+            </div>
+        </section>
 
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
+<section class="section" id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+        <div class="project">
+            <h3>E-commerce Platform</h3>
+            <p>A full-stack e-commerce solution with real-time inventory management.</p>
+            <a href="https://ecommerce.com" class="project-link">Visit Project</a>
+        </div>
+        <div class="project">
+            <h3>Social Media Dashboard</h3>
+            <p>An analytics dashboard for tracking social media engagement across platforms.</p>
+            <a href="https://dashboard.com" class="project-link">Visit Project</a>
+        </div>
+        <div class="project">
+            <h3>Fitness Tracker App</h3>
+            <p>A mobile-first web app for tracking workouts and nutrition.</p>
+            <a href="https://fitnessapp.com" class="project-link">Visit Project</a>
+        </div>
+    </div>
+</section>
 
-        .hidden {
-            display: none;
-        }
-
-        /* Rest of the page */
-        .header {
-            background: rgba( 0, 0, 0, 0.2);
-            backdrop-filter: blur(3px);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            padding: 20px 0;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-        }
-
-        .container {
-            max-width: 1200px;
-            color: #fff;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .section {
-            background-color: rgba(0, 0, 0, 0.2);
-            backdrop-filter: blur(3px);
-            border-radius: 20px;
-            padding: 30px;
-            margin-bottom: 30px;
-            box-shadow: 0 10px 20px rgba(255, 255, 255, 0.01);
-            transform: translateY(50px);
-            opacity: 0;
-            transition: all 0.5s ease;
-        }
-
-        .section.animate {
-            transform: translateY(0);
-            opacity: 1;
-        }
-
-        .section h2 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            color: #bb86fc;
-        }
-
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .skill {
-            background: #3700b3;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 25px;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-        }
-
-        .skill:hover {
-            transform: scale(1.05);
-            box-shadow: 0 5px 15px rgba(187, 134, 252, 0.4);
-        }
-
-        .projects {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-.project {
-    background: rgba(255, 255, 255, 0.3);
-    border-color: black;
-    backdrop-filter: blur(20px);
-    border-radius: 10px;
-    padding: 20px;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.project.expanded {
-    padding-bottom: 60px; /* Menambahkan ruang untuk link */
-}
-
-.project-link {
-    display: none;
-    position: absolute;
-    bottom: 10px;
-    left: 20px;
-    color: #3498db;
-    font-weight: bold;
-    text-decoration: none;
-    opacity: 0;
-    transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-.project.expanded .project-link {
-    display: block;
-    opacity: 1;
-    transform: translateY(0); /* Posisi default */
-}
-
-.project-link.hidden {
-    opacity: 0;
-    transform: translateY(10px); /* Animasi slide-down */
-}
-
-        .project:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .contact-form {
-            display: grid;
-            gap: 20px;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 1rem;
-        }
-
-        .contact-form button {
-            background: #3498db;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .contact-form button:hover {
-            background: #2980b9;
-        }
-
-        .floating-shapes {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            z-index: -1;
-        }
-
-        .shape {
-            position: absolute;
-            background: rgba(52, 152, 219, 0.1);
-            border-radius: 50%;
-            animation: float 15s infinite;
-        }
-
-        @keyframes float {
-            0% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(180deg); }
-            100% { transform: translateY(0) rotate(360deg); }
-        }
-
-        @media (max-width: 768px) {
-            .header h1 {
-                font-size: 2rem;
-            }
-
-            .section h2 {
-                font-size: 1.5rem;
-            }
-
-            .skill {
-                font-size: 0.9rem;
-            }
-        }
-        #particles-canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-        }
-
-        @import url('https://fonts.googleapis.com/css?family=Cairo');
-.title {
-	font-family: "Poppins";
-	text-align: center;
-	color: #FFF;
-/*   flex-direction: column;
-align-items: center;
-justify-content: center;
-height: 100vh;
-letter-spacing: 1px;
-line-height:2 */
-}
-.title h1 {
-	background-image: url(https://media4.giphy.com/media/iF0qnPWMvobyNk5g8C/giphy.gif?cid=6c09b952ajprup9y4q1e21eg6maub6mm92huhly460r9d7wd&ep=v1_internal_gif_by_id&rid=giphy.gif&ct=g);
-	background-size: cover;
-	color: transparent;
-	-moz-background-clip: text;
-	-webkit-background-clip: text;
-	text-transform: uppercase;
-/*   font-size: 120px;
-margin: 10px 0; */
-}
+        <section class="section" id="contact">
+            <h2>Contact Me</h2>
+            <form class="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </div>
+    <canvas id="particles-canvas"></canvas>
+    <script src="JS/scripts-main.js"></script>
+</body>
+</html>
