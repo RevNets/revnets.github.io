@@ -14,8 +14,8 @@
          this.x = Math.random() * width;
          this.y = Math.random() * height;
          this.size = Math.random() * 3 + 1;
-         this.speedX = Math.random() * 0.5 - 0.25;
-         this.speedY = Math.random() * 0.5 - 0.25;
+         this.speedX = Math.random() * 1 - 0.5;
+         this.speedY = Math.random() * 1 - 0.5;
      }
 
      update() {
