@@ -12,7 +12,7 @@
             color: #e0e0e0;
             line-height: 1.6;
             overflow: hidden; /* Disable scrolling during loading */
-            background-color: #121212;
+            background-color: #0a0a1e;
         }
 
         /* Loading overlay */
@@ -225,14 +225,12 @@
                 font-size: 0.9rem;
             }
         }
-        #particles-js {
+        #particles-canvas {
             position: fixed;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
         }
+
         @import url('https://fonts.googleapis.com/css?family=Cairo');
 .title {
 	font-family: "Poppins";
