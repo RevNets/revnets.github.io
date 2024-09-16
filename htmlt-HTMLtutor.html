@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="theme-color" content="#191A2E">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Portfolio</title>
+    <link rel="stylesheet" href="CSS/styles-main.css">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+<style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        h2 {
+          font-family: 'Poppins';
+        }
+        h3 {
+            color: #bb86cc;
+            padding-top: 20px;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            color: #000000;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+        a{
+          text-decoration: none;
+          color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading screen -->
+    <div class="loading-overlay">
+        <div class="spinner"></div>
+    </div>
+
+    <header class="header">
+        <div class="title">
+            <h1>Revy Network</h1>
+        </div>
+    </header>
+
+    <div class="container">
+<section class="section">
+        <h2>Pendahuluan</h2>
+        <p>HTML (HyperText Markup Language) adalah bahasa markup standar untuk membuat halaman web. HTML memberikan struktur pada halaman web dengan menggunakan elemen-elemen seperti paragraf, heading, tautan, dan gambar. Tutorial ini akan memandu Anda melalui dasar-dasar coding HTML.</p>
+    </section>
+
+    <section class="section">
+        <h2>Struktur Dasar HTML</h2>
+        <p>Setiap dokumen HTML dimulai dengan struktur dasar berikut:</p>
+        <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Judul Halaman&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Selamat Datang di Halaman Web Saya&lt;/h1&gt;
+    &lt;p&gt;Ini adalah paragraf pertama saya.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+        </pre>
+    </section>
+
+    <section class="section">
+        <h2>Penjelasan Struktur</h2>
+        <ul>
+            <li>&lt;!DOCTYPE html&gt;: Menunjukkan bahwa ini adalah dokumen HTML5.</li>
+            <li>&lt;html&gt;: Elemen root dari halaman HTML.</li>
+            <li>&lt;head&gt;: Berisi informasi metadata tentang halaman, seperti &lt;title&gt; dan link ke stylesheet.</li>
+            <li>&lt;title&gt;: Menetapkan judul halaman yang ditampilkan di tab browser.</li>
+            <li>&lt;body&gt;: Berisi konten utama halaman yang akan ditampilkan di browser.</li>
+        </ul>
+    </section>
+
+    <section class="section">
+        <h2>Elemen HTML Umum</h2>
+
+            <h3>Heading</h3>
+            <p>Elemen heading digunakan untuk membuat judul. Ada enam tingkat heading dari &lt;h1&gt; (paling penting) hingga &lt;h6&gt; (paling tidak penting):</p>
+            <pre>
+&lt;h1&gt;Judul Utama&lt;/h1&gt;
+&lt;h2&gt;Subjudul&lt;/h2&gt;
+&lt;h3&gt;Sub-subjudul&lt;/h3&gt;
+            </pre>
+
+            <h3>Paragraf</h3>
+            <p>Gunakan elemen &lt;p&gt; untuk membuat paragraf:</p>
+            <pre>
+&lt;p&gt;Ini adalah paragraf pertama saya.&lt;/p&gt;
+&lt;p&gt;Ini adalah paragraf kedua saya.&lt;/p&gt;
+            </pre>
+
+            <h3>Tautan</h3>
+            <p>Gunakan elemen &lt;a&gt; atau yang lainnya untuk membuat tautan. Gunakan atribut href untuk menentukan URL tujuan:</p>
+            <pre>
+&lt;a href="https://www.example.com"&gt;Kunjungi Example.com&lt;/a&gt;
+            </pre>
+
+            <h3>Gambar</h3>
+            <p>Untuk menambahkan gambar, gunakan elemen &lt;img&gt; dengan atribut src yang menunjuk ke file gambar dan alt untuk teks alternatif:</p>
+            <pre>
+&lt;img src="gambar.jpg" alt="Deskripsi Gambar"&gt;
+            </pre>
+
+            <h3>Daftar</h3>
+            <p>Ada dua jenis daftar: daftar berurutan (&lt;ol&gt;) dan daftar tidak berurutan (&lt;ul&gt;). Daftar item ditandai dengan &lt;li&gt;:</p>
+            <p>Daftar Tidak Berurutan:</p>
+            <pre>
+&lt;ul&gt;
+    &lt;li&gt;Item 1&lt;/li&gt;
+    &lt;li&gt;Item 2&lt;/li&gt;
+    &lt;li&gt;Item 3&lt;/li&gt;
+&lt;/ul&gt;
+            </pre>
+            <p>Daftar Berurutan:</p>
+            <pre>
+&lt;ol&gt;
+    &lt;li&gt;Item A&lt;/li&gt;
+    &lt;li&gt;Item B&lt;/li&gt;
+    &lt;li&gt;Item C&lt;/li&gt;
+&lt;/ol&gt;
+            </pre>
+
+            <h3>Formulir</h3>
+            <p>Formulir memungkinkan pengguna untuk mengirimkan data. Gunakan elemen &lt;form&gt;, &lt;input&gt;, &lt;label&gt;, dan &lt;button&gt; untuk membuat formulir sederhana:</p>
+            <pre>
+&lt;form action="/submit" method="post"&gt;
+    &lt;label for="name"&gt;Nama:&lt;/label&gt;
+    &lt;input type="text" id="name" name="name"&gt;
+    
+    &lt;label for="email"&gt;Email:&lt;/label&gt;
+    &lt;input type="email" id="email" name="email"&gt;
+    
+    &lt;button type="submit"&gt;Kirim&lt;/button&gt;
+&lt;/form&gt;
+            </pre>
+        </section>
+
+    <section class="section">
+        <h2>Tips dan Trik</h2>
+        <ul>
+            <li><strong>Validasi HTML:</strong> Gunakan alat validasi HTML seperti W3C Validator untuk memastikan kode Anda bebas dari kesalahan.</li>
+            <li><strong>Keterbacaan:</strong> Gunakan indentasi dan pemformatan yang konsisten untuk meningkatkan keterbacaan kode Anda.</li>
+            <li><strong>Komentar:</strong> Tambahkan komentar menggunakan &lt;!-- komentar --&gt; untuk menjelaskan bagian-bagian penting dalam kode Anda.</li>
+        </ul>
+    </section>
+
+    <section class="section">
+        <h2>Referensi</h2>
+        <ul>
+            <a href="https://www.w3schools.com/html/">Dokumentasi HTML W3Schools</a>
+          </ul><ul>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/HTML">MDN Web Docs - HTML</a>
+        </ul>
+    </section>
+
+    <section class="section">
+        <h2>Penutup</h2>
+        <p>Sekarang Anda telah mempelajari dasar-dasar HTML! Dengan pengetahuan ini, Anda dapat mulai membuat halaman web sederhana dan membangun keterampilan Anda lebih lanjut dalam pengembangan web.</p>
+        <p>Semoga tutorial ini membantu Anda memahami dasar-dasar HTML. Jika ada pertanyaan atau Anda memerlukan bantuan tambahan, jangan ragu untuk bertanya!</p>
+    </section>
+
+    <canvas id="particles-canvas"></canvas>
+    <script src="JS/scripts-main.js"></script>
+</body>
+</html>
