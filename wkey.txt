@@ -456,8 +456,8 @@ window.onload = loadFinished;
 <td align="right" width="200">
 <!-- Side bar -->
   <table border="1" cellpadding="20"><tbody><tr><td cellspacing="50" cellpadding="50">
-  <h2>Status: <font color="red" id="status">Not typing</font></h2>
-  <div id="comment">Enable WiFiKeyboard input on you device. <a href="http://code.google.com/p/wifikeyboard/wiki/WiFiKeyboardSettings">Visit help page.</a></div>
+  <h2>Status: <font color="green" id="status">CONNECT</font></h2>
+  <div id="comment">Enable WiFiKeyboard input on you device.<a href="http://code.google.com/p/wifikeyboard/wiki/WiFiKeyboardSettings">Visit help page.</a></div>
   </td></tr></tbody></table>
 
   <br>
@@ -475,7 +475,7 @@ window.onload = loadFinished;
 </tr>
 <tr>
 <td colspan="3">
-  <div class="footer"><a href="http://code.google.com/p/wifikeyboard/">Source code available (license GPL v2).</a><br>Created by Ivan Volosyuk on 2010.</div>
+  <div class="footer"><a href="http://code.google.com/p/wifikeyboard/">Source code available (license GPL v2).</a><br>Created by Ivan Volosyuk on 2010. Mod by RevyAja on 2024</div>
 <!-- <div id="keys">Debug: key presses:</div> -->
 <!-- <div id="debug">New event placeholder.</div> -->
 </td><td>
