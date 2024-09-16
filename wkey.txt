@@ -1,4 +1,31 @@
-<script language="JavaScript">
+<html class="wf-yanonekaffeesatz-n4-active wf-droidsans-n4-active wf-cantal-n4-inactive wf-active"><!--
+ * WiFi Keyboard - Remote Keyboard for Android.
+ * Copyright (C) 2011 Ivan Volosyuk
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License
+ * as published by the Free Software Foundation; either version 2
+ * of the License, or (at your option) any later version.
+
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ --><head>
+  <!-- Todo list:
+     - Latency display enable.
+     - Support fo chinese input method, need to figure out how to deal with it
+     - TextField mode
+     - 
+
+    -->
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>WiFi Keyboard</title>
+  <script src="http://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js" type="text/javascript" async=""></script><script language="JavaScript">
 if (typeof XMLHttpRequest == "undefined")
   XMLHttpRequest = function () {
     try { return new ActiveXObject("Msxml2.XMLHTTP.6.0"); }
@@ -358,3 +385,103 @@ function loadFinished() {
 }
 window.onload = loadFinished;
 </script>
+<link rel="icon" type="image/png" href="/icon.png">
+<style type="text/css">
+   h1 {
+    font-size: 30px;
+   } 
+   .wf-active h1 {
+    font-family: 'Cantal', arial, serif;
+   }
+   h2 {
+    font-size: 20px;
+   }
+   .wf-active h2 {
+    font-family: 'Yanone Kaffeesatz', arial, serif; 
+   }
+   div {
+    font-size: 15px;
+    padding: 3px;
+   }
+   .wf-active div {
+    font-family: 'Droid Sans', arial, serif;
+   }
+
+   div.footer {
+    font-family: arial, serif;
+    font-size: 20px;
+    text-align: right;
+   }
+   
+   body {
+    color:#000000;
+    background-color:#f1f1ed;
+    margin:0px;
+    overflow:auto;
+   }
+   table.main {
+     width:800px;
+     margin-top:0px;
+     margin-bottom:0px;
+     background-color:#ffffff;
+     padding:15px;
+     background-image:url('bg.gif');
+     background-repeat:repeat-x;
+     height: 100%;
+   }
+</style><link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Cantal%7CYanone+Kaffeesatz%7CDroid+Sans" media="all">
+</head>
+<body id="myBody">
+<table class="main" align="center">
+<tbody>
+<tr valign="top">
+<td class="main" width="450">
+<!-- Main Window -->
+<h1>WiFi&nbsp;Keyboard</h1>
+  <table border="0"><tbody><tr><td cellspacing="50" cellpadding="50">
+  <form name="f">
+  <h2>Keyboard mode:</h2>
+  <div class="mode"><input type="radio" name="mode" value="i" checked="">International keyboard</div>
+  <div class="mode"><input type="radio" name="mode" value="c">Game mode (key codes only)</div>
+  </form>
+  </td></tr></tbody></table>
+
+<!-- Main Window End -->
+</td>
+<td width="450">
+  <table border="0"><tbody><tr><td cellspacing="50" cellpadding="50">
+  </td></tr><tr>
+  </tr></tbody></table>
+</td>
+<td align="right" width="200">
+<!-- Side bar -->
+  <table border="1" cellpadding="20"><tbody><tr><td cellspacing="50" cellpadding="50">
+  <h2>Status: <font color="red" id="status">Not typing</font></h2>
+  <div id="comment">Enable WiFiKeyboard input on you device. <a href="http://code.google.com/p/wifikeyboard/wiki/WiFiKeyboardSettings">Visit help page.</a></div>
+  </td></tr></tbody></table>
+
+  <br>
+</td>
+</tr>
+<tr>
+<td colspan="3">
+  <h2>Android input (type or paste here):</h2>
+  <form method="post" action="/form">
+      <input type="hidden" name="name" value="value">
+      <textarea name="text" cols="100" rows="20" id="in" style="background-color: rgb(241, 241, 237);"></textarea>
+  </form>
+
+</td>
+</tr>
+<tr>
+<td colspan="3">
+  <div class="footer"><a href="http://code.google.com/p/wifikeyboard/">Source code available (license GPL v2).</a><br>Created by Ivan Volosyuk on 2010.</div>
+<!-- <div id="keys">Debug: key presses:</div> -->
+<!-- <div id="debug">New event placeholder.</div> -->
+</td><td>
+</td></tr>
+</tbody>
+</table>
+
+
+</body></html>
