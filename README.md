@@ -1,12 +1,9 @@
 <img src="https://share.creavite.co/66d597e1ce9f5d4f05105780.gif" >
 
-[![Downloads](https://img.shields.io/badge/dynamic/json?color=green&label=Downloads&query=totalString&url=https%3A%2F%2Fraw.githubusercontent.com%2Ftopjohnwu%2Fmagisk-files%2Fcount%2Fcount.json&cacheSeconds=1800)](https://raw.githubusercontent.com/topjohnwu/magisk-files/count/count.json)
-
-#### This is not an officially supported Google product
 
 # RevyNets
 
-Selamat datang di repositori RevyNetwork! 🌐
+Selamat datang di repositori RevyNets! 🌐
 
 ## Tentang Proyek
 
