@@ -181,34 +181,34 @@ function animateSections() {
 }
 
 // Download modal
-    const downloadLinks = document.querySelectorAll('.download-link');
-    const modal = document.getElementById('download-modal');
-    const confirmBtn = document.getElementById('confirm-download');
-    const cancelBtn = document.getElementById('cancel-download');
-    let currentUrl = '';
+const downloadLinks = document.querySelectorAll('.download-link');
+const modal = document.getElementById('download-modal');
+const confirmButton = document.getElementById('confirm-download');
+const cancelButton = document.getElementById('cancel-download');
+let currentDownloadUrl = '';
 
-    downloadLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            currentUrl = link.getAttribute('url');
-            modal.style.display = 'block';
-        });
+downloadLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        currentDownloadUrl = link.getAttribute('data-url');
+        modal.style.display = 'block';
     });
+});
 
-    confirmBtn.addEventListener('click', () => {
-        window.location.href = currentUrl;
+confirmButton.addEventListener('click', () => {
+    window.open(currentDownloadUrl, '_blank');
+    modal.style.display = 'none';
+});
+
+cancelButton.addEventListener('click', () => {
+    modal.style.display = 'none';
+});
+
+window.addEventListener('click', (e) => {
+    if (e.target === modal) {
         modal.style.display = 'none';
-    });
-
-    cancelBtn.addEventListener('click', () => {
-        modal.style.display = 'none';
-    });
-
-    window.addEventListener('click', (e) => {
-        if (e.target == modal) {
-            modal.style.display = 'none';
-        }
-    });
+    }
+});
 
 // Initialize everything
 function init() {
