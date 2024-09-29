@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game Search</title>
+    <title>Custome Search</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdn.lordicon.com/lordicon.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
@@ -12,6 +13,11 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            overflow: hidden;
         }
 
         body {
@@ -55,7 +61,6 @@
             flex-direction: column;
             height: calc(100vh - 80px);
             background-color: transparent;
-            
             margin: 0;
             position: relative;
             z-index: 5;
@@ -70,6 +75,7 @@
             padding: 40px;
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 10%;
             transition: all 0.3s ease;
             max-width: 600px;
             width: 90%;
@@ -87,17 +93,32 @@
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
         }
 
+        /* Container flex untuk search input dan ikon */
+        .search-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+        }
+
         .search-input {
-            padding: 15px 20px;
-            font-size: 18px;
+            padding: 10px 15px;
+            font-size: 16px;
             border: 2px solid #007bff;
             background-color: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(15px);
             border-radius: 30px;
             outline: none;
             transition: all 0.3s ease;
-            margin-bottom: 10px;
-            min-width: 250px;
+            width: 70%;
+        }
+
+        /* Icon Lordicon */
+        .lordicon-container {
+            width: 2rem;
+            height: 2rem;
+            cursor: pointer;
         }
 
         .search-input:focus {
@@ -106,30 +127,21 @@
 
         /* Suggestions */
         #suggestions {
-            position: relative; /* Diubah menjadi relative agar sesuai dengan section */
+            position: relative;
             width: 100%;
-            background-color: white;
-            
-            border-radius: 0 0 20px 20px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             z-index: 1000;
             max-height: 200px;
             overflow-y: auto;
             display: none;
-            margin-top: 10px; /* Memberikan jarak antara input dan saran */
-            opacity: 0; /* Awal transparan */
-            transition: opacity 0.3s ease; /* Efek transisi untuk opacity */
+            margin-top: 5px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
 
         .suggestion {
-            padding: 10px 20px;
+            padding: 5px 20px;
             cursor: pointer;
-            transition: background-color 0.3s ease;
             text-align: left;
-        }
-
-        .suggestion:hover {
-            background-color: #f0f0f0;
         }
 
         /* Background Canvas */
@@ -152,7 +164,10 @@
     <section class="section">
         <div class="search-container">
             <h1>Explore with Google</h1>
-            <input type="text" id="search-input" class="search-input" placeholder="Cari game...">
+            <div class="search-wrapper">
+                <input type="text" id="search-input" class="search-input" placeholder="Cari game...">
+                <lord-icon src="https://cdn.lordicon.com/wjyqkiew.json" trigger="hover" colors="primary:#000000,secondary:#000000" class="lordicon-container"></lord-icon>
+            </div>
             <div id="suggestions"></div>
         </div>
     </section>
@@ -170,8 +185,13 @@
 
         const searchInput = document.getElementById('search-input');
         const suggestionsContainer = document.getElementById('suggestions');
+        const searchIcon = document.querySelector('.lordicon-container');
 
         searchInput.addEventListener('input', showSuggestions);
+
+        searchIcon.addEventListener('click', function() {
+            performSearch(searchInput.value);
+        });
 
         function showSuggestions() {
             const query = searchInput.value.trim().toLowerCase();
@@ -204,7 +224,7 @@
                 });
                 suggestionsContainer.style.display = 'block';
                 setTimeout(() => {
-                    suggestionsContainer.style.opacity = 1; // Gradually show suggestions
+                    suggestionsContainer.style.opacity = 1;
                 }, 0);
             } else {
                 hideSuggestions();
@@ -212,10 +232,10 @@
         }
 
         function hideSuggestions() {
-            suggestionsContainer.style.opacity = 0; // Hide suggestions
+            suggestionsContainer.style.opacity = 0;
             setTimeout(() => {
-                suggestionsContainer.style.display = 'none'; // Set display to none after fading out
-            }, 300); // Time to match CSS transition
+                suggestionsContainer.style.display = 'none';
+            }, 300);
         }
 
         function performSearch(query) {
