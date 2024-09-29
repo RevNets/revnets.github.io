@@ -181,7 +181,6 @@ function animateSections() {
 }
 
 // Download modal
-function setupDownloadModal() {
     const downloadLinks = document.querySelectorAll('.download-link');
     const modal = document.getElementById('download-modal');
     const confirmBtn = document.getElementById('confirm-download');
@@ -210,14 +209,12 @@ function setupDownloadModal() {
             modal.style.display = 'none';
         }
     });
-}
 
 // Initialize everything
 function init() {
     createAbstractBackground();
     setupSmoothScroll();
     animateSections();
-    setupDownloadModal();
 
     // Simulate loading time
     setTimeout(hideLoadingScreen, 2000);
