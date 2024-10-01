@@ -360,3 +360,61 @@ textarea:focus {
         width: 90%;
     }
 }
+
+/* Ad Section */
+#ads.section {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    transform: translateY(50px);
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+#ads.section.animate {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+#ads h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #007aff;
+    text-align: center;
+}
+
+.ad-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.ad-item {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.ad-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive design for ads */
+@media (max-width: 768px) {
+    .ad-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .ad-item {
+        width: 100%;
+        max-width: 300px;
+    }
+}
