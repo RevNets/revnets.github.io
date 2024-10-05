@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    fetch('../data/mcapp-data.json')
+    fetch('../DATA/mcapp-data.json')
         .then(response => response.json())
         .then(data => {
             const appGrid = document.getElementById('app-grid');
