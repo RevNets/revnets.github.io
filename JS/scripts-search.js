@@ -1,7 +1,7 @@
 let searchData = [];
 
         // Memuat data pencarian dari file JSON
-        fetch('search-data.json')
+        fetch('../DATA/search-data.json')
             .then(response => response.json())
             .then(data => {
                 searchData = data.suggestions;
