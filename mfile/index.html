@@ -3,17 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My App</title>
-    <script>
-        async function fetchData() {
-            const response = await fetch('https://0c737c63-fd56-4e47-9004-6a5ad96de770-00-9ji4tpuoaq9h.sisko.replit.dev/mfile.php');
-            const data = await response.text();
-            document.getElementById('output').innerHTML = data;
-        }
-    </script>
+    <title>Mirror Hosting</title>
 </head>
-<body onload="fetchData()">
-    <h1>My PHP App</h1>
-    <div id="output"></div>
+<body>
+    <h1>Selamat Datang di Mirror Hosting</h1>
+    <iframe src="https://0c737c63-fd56-4e47-9004-6a5ad96de770-00-9ji4tpuoaq9h.sisko.replit.dev/mfile.php" style="border:none; width:100%; height:600px;"></iframe>
 </body>
 </html>
